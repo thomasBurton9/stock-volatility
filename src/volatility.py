@@ -8,7 +8,7 @@ def get_alltime_logarithmic_return(data):
     return np.log(close_prices2 / close_prices)
 
 def get_std(logarithmic_returns):
-    return np.std(logarithmic_returns)
+    return np.std(logarithmic_returns, ddof=1)
 
 def get_annualized_volatility(standard_deviation, days: int):
-    return standard_deviation * math.sqrt((days / 365) * 252)
+    return standard_deviation * math.sqrt(252)

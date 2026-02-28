@@ -32,7 +32,7 @@ def get_ticker_volatility(ticker: str, time_period: str, volatility_time_period:
     # Implement - for each window from just [0] to [len(data)-window, len(data)]
     avg_volatility = np.zeros_like(avg_log_return)
 
-    for i in range(1, len(avg_log_return)+1):
+    for i in range(2, len(avg_log_return)+1):
         initial_index = i - volatility_time_period
         initial_index = max(initial_index, 0)
         standard_deviation = get_std(avg_log_return[initial_index: i])
